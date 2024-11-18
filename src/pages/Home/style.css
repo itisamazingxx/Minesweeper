@@ -1,0 +1,65 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #2b2d42;
+    color: #edf2f4;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Title styling */
+  .home-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ef233c;
+  }
+  
+  /* Description styling */
+  .home-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    max-width: 600px;
+  }
+  
+  /* Buttons container */
+  .home-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Buttons styling */
+  .home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #edf2f4;
+    background-color: #8d99ae;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  /* Hover effect for buttons */
+  .home-button:hover {
+    background-color: #ef233c;
+    transform: scale(1.1);
+  }
+  
+  /* Specific styles for Start Game button */
+  .start-game {
+    background-color: #ef233c;
+  }
+  
+  /* Specific styles for View Rules button */
+  .rules {
+    background-color: #8d99ae;
+  }
+  
