@@ -29,6 +29,21 @@ class Game extends React.Component {
     return difficulties[difficulty] || difficulties.easy;
   };
 
+  componentDidUpdate(prevProps) {
+    const { difficulty } = this.props.params;
+    if (prevProps.params.difficulty !== difficulty) {
+      const newSettings = this.getSettingsByDifficulty(difficulty);
+      this.setState(
+        { ...newSettings },
+        () => {
+          if (this.boardElement.current) {
+            this.boardElement.current.restartBoard();
+          }
+        }
+      );
+    }
+  }
+
   restartGame = () => {
     this.boardElement.current.restartBoard();
   };
@@ -81,25 +96,19 @@ const withParams = (Component) => (props) => {
   return <Component {...props} params={params} navigate={navigate} />;
 };
 
+
 const DifficultyButtons = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="difficulty-buttons">
-      <button
-        className="difficulty-button easy"
-        onClick={() => (window.location.href = "/game/easy")}
-      >
+      <button className="difficulty-button easy" onClick={() => navigate("/game/easy")}>
         Easy
       </button>
-      <button
-        className="difficulty-button medium"
-        onClick={() => (window.location.href = "/game/medium")}
-      >
+      <button className="difficulty-button medium" onClick={() => navigate("/game/medium")}>
         Medium
       </button>
-      <button
-        className="difficulty-button hard"
-        onClick={() => (window.location.href = "/game/hard")}
-      >
+      <button className="difficulty-button hard" onClick={() => navigate("/game/hard")}>
         Hard
       </button>
     </div>
