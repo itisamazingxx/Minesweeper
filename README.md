@@ -4,6 +4,11 @@
 npm run dev
 ```
 
+2. **Render Link**:
+```bash
+https://jingwen-hou-minesweeper.onrender.com
+```
+
 ## **Write-Up**
 ### **1. Challenges Faced**
 - **State Management:** 
